@@ -1,0 +1,14 @@
+- name: Sample Playbook for testing 
+  hosts: localhost 
+  tasks:
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Hello world
+   - name: install/update valgrind 
+     ansible.builtin.yum:
+       name: "{{ pkglist }}"
+       state: latest
+       
+  vars:
+    pkglist:
+      - valgrind
