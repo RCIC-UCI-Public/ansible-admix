@@ -1,0 +1,26 @@
+!include pymodule.yaml
+---
+- package: ansible-lint
+  name: ansible-lint 
+  version: "{{versions.ansible_lint}}"
+  vendor_source: https://github.com/ansible/{{name}}/archive/v{{version}}.{{extension}}
+  description: |
+     {{name}} {{version}}. Ansible-lint checks playbooks for practices and behaviour
+     that could potentially be improved. {{description_src}}
+  root: "{{purepyroot}}"
+  build:
+    pkgmake: sed -i "s/_scm>=/_scm==/" setup.cfg; python ./setup.py  
+  requires:
+     - ansible-base
+     - python-ruamel-yaml
+     - python-ruamel-yaml-clib
+     - "{{pypkg}}-cryptography"
+     - "{{pypkg}}-enum34"
+     - "{{pypkg}}-cffi"
+     - "{{pypkg}}-pycparser"
+     - "{{pypkg}}-setuptools >= 40.6.0-1"
+     - "{{pypkg}}-six"
+     - !ifeq "{{pkg_defaults.site.os_release}},7,{{pypkg}}-ipaddress,"
+  files:
+     - "{{root}}"
+     - /usr/bin/*

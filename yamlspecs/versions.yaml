@@ -1,0 +1,9 @@
+!include site.yaml
+---
+ansible_lint:  "4.1.0"
+ansible: "2.10.7"
+bcrypt: "3.1.4"
+cryptography: "2.8"
+packaging: "20.9"
+pynacl: "1.2.1"
+pyparsing: "2.4.7"

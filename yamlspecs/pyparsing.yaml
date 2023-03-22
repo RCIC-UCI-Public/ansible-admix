@@ -1,0 +1,13 @@
+!include pymodule.yaml
+---
+- package: pyparsing 
+  name: pyparsing 
+  baserpm: "{{name}}"
+  version: "{{versions.pyparsing}}"
+  vendor_source: https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/{{name}}-{{version}}.{{extension}}
+  arch: noarch
+  description: | 
+     The pyparsing module is an alternative approach to creating and executing simple grammars, vs. the traditional lex/yacc approach, or the use of regular expressions. The pyparsing module provides a library of classes that client code uses to construct the grammar directly in Python code.
+     {{description_src}}
+  files:
+    - "{{purepyroot}}/*"

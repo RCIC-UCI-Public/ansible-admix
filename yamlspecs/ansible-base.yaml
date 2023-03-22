@@ -1,0 +1,27 @@
+!include pymodule.yaml
+---
+- package: ansible-base
+  name: ansible-base 
+  version: "{{versions.ansible}}"
+  baserpm: "{{name}}"
+  vendor_source:  https://files.pythonhosted.org/packages/ba/58/009ab5eccdac9f44c52cc50391d5c8b986bc6559e0d56f3cc558a779ca48/{{name}}-{{version}}.{{extension}}
+  os_release: "{{pkg_defaults.site.os_release}}"
+  description: |
+     ansible {{version}}. 
+     Ansible is a radically simple IT automation platform that makes your applications and systems easier 
+     to deploy.  Avoid writing scripts or custom code to deploy and update your applications - automate in 
+     a language that approaches plain English, using SSH, with no agents to install on remote systems. 
+     https://docs.ansible.com/ansible/ https://www.ansible.com/
+     source code: {{vendor_source}}
+  root: "/usr/lib/python{{pkg_defaults.site.python_sys}}/site-packages"
+  
+  pyyaml: !ifeq "{{os_release}},8,{{pypkg}}-PyYAML,PyYAML"
+  requires:
+     - "{{pypkg}}-bcrypt"
+     - "{{pypkg}}-paramiko"
+     - "{{pypkg}}-pynacl"
+     - "{{pypkg}}-jinja2"
+     - "{{pyyaml}}" 
+  files:
+     - "{{root}}"
+     - /usr/bin/*

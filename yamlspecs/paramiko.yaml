@@ -1,0 +1,15 @@
+!include pymodule.yaml
+---
+- package: paramiko
+  name: paramiko 
+  version: "{{versions.paramiko}}"
+  vendor_source:  https://files.pythonhosted.org/packages/51/d8/1b990dff4ef105916de926479683c37349f2fdc9a76cfde6653491b5c0b9/{{name}}-{{version}}.{{extension}}
+  root: "{{purepyroot}}" 
+  description: |
+     Paramiko version {{version}} is a pure-Python implementation of the SSHv2 protocol, providing both client and server functionality. 
+     It provides the foundation for the high-level SSH library Fabric, which is what we recommend you use for common 
+     client use-cases such as running remote shell commands or transferring files.
+
+     Direct use of Paramiko itself is only intended for users who need advanced/low-level primitives or want to run 
+     an in-Python sshd.
+     {{description_src}}

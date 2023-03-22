@@ -1,0 +1,6 @@
+cec3a1e04cb0d2ffeee0a9caf74d56e526f4ec68  sources/ansible-2.10.7.tar.gz
+ffcd8e5a1eaf6e95c4b4cb3836953b996d4131cd  sources/ansible-base-2.10.7.tar.gz
+4b6a4b1ce7cd5fe1659b31d76ce182bc199123c2  sources/ansible-lint-4.1.0.tar.gz
+94ef5dc1261a4388572ce3ad9af1515691276d2c  sources/cryptography-2.8.tar.gz
+6f8880ab84f05714a2549c1b54314b4f79fee319  sources/packaging-20.9.tar.gz
+ca8d892c93fe2d54ea5e6f31c5798e40c58e8667  sources/pyparsing-2.4.7.tar.gz

@@ -1,0 +1,9 @@
+!include pymodule.yaml
+---
+- package: bcrypt
+  name: bcrypt 
+  version: "{{versions.bcrypt}}"
+  vendor_source:  https://github.com/pyca/bcrypt/archive/{{version}}.{{extension}}
+  description: |
+     Bcrypt version {{version}}. Good password hashing for your software and your servers.
+     {{description_src}}

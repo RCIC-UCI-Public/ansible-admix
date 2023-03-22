@@ -1,0 +1,21 @@
+!include rcic-package.yaml
+!include rpm.yaml
+---
+- package: pymodule  template
+  name: pymodule_skel
+  versions: !include versions.yaml
+  description_src: Source code {{vendor_source}}
+
+  pypkg: !ifeq "{{pkg_defaults.site.os_release}},8,python3,python"
+  baserpm: "{{pypkg}}-{{name}}"
+
+  root: "{{pkg_defaults.python_pkgs}}"
+  purepyroot: /usr/lib/python{{pkg_defaults.site.python_sys}}/site-packages
+
+  build:
+    pkgmake: python ./setup.py  
+    target: build
+  install:
+    makeinstall: python ./setup.py install --root=$(ROOT) 
+  files: 
+    - "{{root}}"
