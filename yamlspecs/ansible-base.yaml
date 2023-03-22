@@ -4,6 +4,8 @@
   name: ansible-base 
   version: "{{versions.ansible}}"
   baserpm: "{{name}}"
+  addfile:
+    - "filter-requires-{{name}}.sh"
   vendor_source:  https://files.pythonhosted.org/packages/ba/58/009ab5eccdac9f44c52cc50391d5c8b986bc6559e0d56f3cc558a779ca48/{{name}}-{{version}}.{{extension}}
   os_release: "{{pkg_defaults.site.os_release}}"
   description: |
@@ -25,3 +27,4 @@
   files:
      - "{{root}}"
      - /usr/bin/*
+  rpmFilters: *filterRequires
