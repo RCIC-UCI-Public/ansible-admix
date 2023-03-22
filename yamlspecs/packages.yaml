@@ -4,11 +4,12 @@ system:
    - !ifeq "{{site.os_release}},7,python-jinja2,python3-jinja2"
    - !ifeq "{{site.os_release}},7,python-setuptools,"
 bootstrap:
-   - !ifeq "{{site.os_release}},7,{{bootstrap7}},"
-   - ansible-base
-bootstrap7:
    - bcrypt
    - pynacl
+   - !ifeq "{{site.os_release}},7,{{bootstrap7}},"
+   - !ifeq "{{site.os_release}},8,,paramiko"
+   - ansible-base
+bootstrap7:
    - pyparsing
    - packaging
 build:
