@@ -17,7 +17,7 @@
      source code: {{vendor_source}}
   root: "/usr/lib/python{{pkg_defaults.site.python_sys}}/site-packages"
   
-  pyyaml: !ifeq "{{os_release}},8,{{pypkg}}-PyYAML,PyYAML"
+  pyyaml: !ifneq "{{os_release}},7,{{pypkg}}-PyYAML,PyYAML"
   requires:
      - "{{pypkg}}-bcrypt"
      - "{{pypkg}}-paramiko"
@@ -27,4 +27,6 @@
   files:
      - "{{root}}"
      - /usr/bin/*
+  conflicts: ansible-core
+  obsoletes: ansible-core
   rpmFilters: *filterRequires
