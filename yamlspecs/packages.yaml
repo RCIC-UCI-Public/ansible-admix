@@ -7,7 +7,7 @@ bootstrap:
    - bcrypt
    - pynacl
    - !ifeq "{{site.os_release}},7,{{bootstrap7}},"
-   - !ifeq "{{site.os_release}},8,paramiko,"
+   - !ifeq "{{site.os_release}},7,,paramiko"
    - ansible-base
 bootstrap7:
    - pyparsing
