@@ -14,7 +14,7 @@ bootstrap7:
    - packaging
 build:
    - ansible
-   - !ifeq "{{site.os_release}},7,,ansible-lint"
+#   - !ifeq "{{site.os_release}},7,,ansible-lint"
 manifest:
    - "{{bootstrap}}"
    - "{{build}}"
